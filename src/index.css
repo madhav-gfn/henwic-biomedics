@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body antialiased;
+    font-feature-settings: "ss01" on, "ss02" on;
+  }
+
+  ::selection {
+    background: theme("colors.primary");
+    color: theme("colors.background");
+  }
+
+  /* Visible focus state — kept even amid heavy motion */
+  :focus-visible {
+    outline: 2px solid theme("colors.primary");
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme("colors.background");
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.line-strong");
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.primary");
+  }
+}
+
+@layer components {
+  /* Frosted instrumentation panel used throughout the site */
+  .glass-panel {
+    background: rgba(8, 10, 9, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(184, 255, 207, 0.16);
+    border-left: 1px solid rgba(184, 255, 207, 0.12);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Faint blueprint grid — the "lab instrument" backdrop */
+  .scientific-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Gradient text clip helper */
+  .text-mask {
+    background: linear-gradient(to right, #f8fafc, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply max-w-container mx-auto px-6 md:px-grid-margin;
+  }
+}
+
+/* Reduced motion: collapse to instant, no parallax/scroll-jank for those who need it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

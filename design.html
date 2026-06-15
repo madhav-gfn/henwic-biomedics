@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HENWIC BIOMEDICS - Precision Wellness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#045330",
+                        "text-secondary": "#A1A1AA",
+                        "on-tertiary-fixed-variant": "#03522f",
+                        "surface-container-low": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "border-glow": "rgba(0, 210, 106, 0.2)",
+                        "on-tertiary": "#00391f",
+                        "on-secondary-container": "#003e1c",
+                        "on-primary": "#003918",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#2fe378",
+                        "surface-container-highest": "#353534",
+                        "surface-bright": "#3a3939",
+                        "tertiary-fixed": "#acf2c3",
+                        "primary": "#42ef83",
+                        "on-primary-fixed": "#00210b",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e1",
+                        "outline": "#859585",
+                        "secondary-fixed-dim": "#4de082",
+                        "primary-container": "#00d26a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#62ff95",
+                        "on-secondary": "#003919",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed-dim": "#90d6a8",
+                        "surface": "#131313",
+                        "text-primary": "#F8FAFC",
+                        "on-surface-variant": "#bbcbba",
+                        "tertiary": "#9ce1b3",
+                        "on-primary-fixed-variant": "#005226",
+                        "surface-glass": "rgba(10, 10, 10, 0.7)",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-fixed": "#002110",
+                        "surface-tint": "#2fe378",
+                        "secondary": "#4de082",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#3c4a3d",
+                        "tertiary-container": "#81c599",
+                        "secondary-container": "#00b55d",
+                        "inverse-primary": "#006d34",
+                        "on-primary-container": "#005426",
+                        "background": "#131313",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#00210c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "grid-gutter": "1.5rem",
+                        "section-gap": "10rem",
+                        "grid-margin": "4rem",
+                        "unit": "4px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "technical-data": ["Space Mono"],
+                        "display-hero": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "technical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "display-hero": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #F8FAFC;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(5, 5, 5, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(184, 255, 207, 0.2);
+            border-left: 1px solid rgba(184, 255, 207, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .scientific-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Ambient Glows */
+        .bio-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 210, 106, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3c4a3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d26a;
+        }
+
+        .text-mask-reveal {
+            background: linear-gradient(to right, #F8FAFC, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .energy-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: flow 4s linear infinite;
+        }
+
+        @keyframes flow {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md relative">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-surface-glass backdrop-blur-xl shadow-none ease-in-out duration-500 hover:backdrop-blur-3xl">
+<div class="flex justify-between items-center px-grid-margin h-16 w-full mx-auto max-w-[1440px]">
+<div class="font-headline-md text-headline-md tracking-tighter text-primary uppercase">HENWIC BIOMEDICS</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors duration-300" href="#products">Products</a>
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors duration-300" href="#science">Science</a>
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<button class="font-label-caps text-label-caps bg-primary text-background px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(0,210,106,0.5)] transition-all">Portal</button>
+</div>
+</header>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full opacity-60" -->
+<div class="absolute inset-0 w-full h-full opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = (uv * 2.0 - 1.0) * (u_resolution.x / u_resolution.y);
+    
+    float t = u_time * 0.2;
+    
+    // Abstract flowing particles / cellular motion
+    float m = 0.0;
+    for(float i=1.0; i<=3.0; i++) {
+        vec2 p_i = p * i * 1.5;
+        p_i += vec2(sin(t + i), cos(t * 0.8 + i));
+        float n = noise(p_i + t);
+        m += smoothstep(0.48, 0.5, n) * (1.0/i);
+    }
+    
+    vec3 color1 = vec3(0.0, 0.82, 0.41); // #00D26A
+    vec3 color2 = vec3(0.02, 0.02, 0.02); // #050505
+    
+    vec3 finalColor = mix(color2, color1, m * 0.15);
+    
+    // Add a subtle vignette
+    float vignette = 1.0 - length(p * 0.5);
+    finalColor *= smoothstep(0.0, 0.8, vignette);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505]"></div>
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center">
+<h1 class="font-display-hero text-display-hero text-text-primary mb-6 reveal opacity-0 transform translate-y-10" id="hero-title">
+                    Precision <span class="text-primary">Wellness</span>.<br/>Powered by Science.
+                </h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl reveal opacity-0 transform translate-y-10 delay-200">
+                    Advanced nutritional and probiotic formulations engineered for modern health. Cinematic minimalism meets clinical purity.
+                </p>
+<div class="mt-16 animate-bounce opacity-50">
+<span class="material-symbols-outlined text-3xl">arrow_downward</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Brand Story -->
+<section class="py-section-gap relative scientific-grid">
+<div class="bio-glow top-1/2 left-0 -translate-y-1/2"></div>
+<div class="max-w-[1440px] mx-auto px-grid-margin">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter items-center">
+<div class="col-span-1 md:col-span-5 relative">
+<div class="glass-panel p-8 rounded-xl aspect-square flex flex-col justify-between reveal">
+<span class="font-technical-data text-technical-data text-primary">PHASE 01</span>
+<h2 class="font-headline-lg text-headline-lg text-mask-reveal">Human<br/>Health<br/>Evolved.</h2>
+<p class="font-label-caps text-label-caps text-text-secondary">OBSERVE THE METRICS.</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-7 h-full flex flex-col justify-center space-y-16 pl-0 md:pl-12">
+<div class="reveal border-l border-white/10 pl-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Energy</h3>
+<p class="font-body-md text-body-md text-text-secondary">Cellular ATP production optimized through precise amino acid synthesis.</p>
+</div>
+<div class="reveal border-l border-white/10 pl-8 delay-100">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Digestion</h3>
+<p class="font-body-md text-body-md text-text-secondary">Microbiome recalibration via targeted, resilient probiotic strains.</p>
+</div>
+<div class="reveal border-l border-white/10 pl-8 delay-200">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Balance</h3>
+<p class="font-body-md text-body-md text-text-secondary">Homeostasis achieved through systemic biological engineering.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Science & Quality -->
+<section class="py-section-gap relative overflow-hidden" id="science">
+<div class="bio-glow bottom-0 right-0"></div>
+<div class="max-w-[1440px] mx-auto px-grid-margin relative z-10">
+<div class="text-center mb-24 reveal">
+<span class="font-label-caps text-label-caps text-primary tracking-widest block mb-4">CLINICAL VALIDATION</span>
+<h2 class="font-headline-lg text-headline-lg">Engineered for Purity</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-10 rounded-xl hover:-translate-y-2 transition-transform duration-500 reveal">
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">ISO Certified</h3>
+<p class="font-body-md text-body-md text-text-secondary">Manufacturing processes conforming to rigorous international standards.</p>
+</div>
+<div class="glass-panel p-10 rounded-xl hover:-translate-y-2 transition-transform duration-500 reveal delay-100">
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">science</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">GMP Compliant</h3>
+<p class="font-body-md text-body-md text-text-secondary">Good Manufacturing Practices ensuring consistent quality and safety.</p>
+</div>
+<div class="glass-panel p-10 rounded-xl hover:-translate-y-2 transition-transform duration-500 reveal delay-200">
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">shield</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">FSSAI Approved</h3>
+<p class="font-body-md text-body-md text-text-secondary">Fully compliant with the Food Safety and Standards Authority.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing CTA -->
+<section class="py-section-gap relative flex items-center justify-center text-center overflow-hidden min-h-[614px]">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 reveal">
+<h2 class="font-display-hero text-display-hero text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 mb-8" style="font-size: clamp(40px, 8vw, 120px); line-height: 1;">
+                    Better Health<br/>Begins Within.
+                </h2>
+<button class="font-label-caps text-label-caps bg-primary text-background px-8 py-4 rounded-full hover:shadow-[0_0_30px_rgba(0,210,106,0.6)] transition-all uppercase tracking-widest">
+                    Explore Ecosystem
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant fade-in transition-opacity" id="contact">
+<div class="flex flex-col items-center justify-center px-grid-margin w-full text-center">
+<div class="font-display-hero text-display-hero opacity-10 text-primary uppercase mb-12 select-none pointer-events-none w-full overflow-hidden text-center" style="font-size: clamp(60px, 15vw, 150px); line-height: 0.8;">HENWIC</div>
+<div class="grid grid-cols-1 md:grid-cols-3 w-full max-w-4xl gap-12 mb-16 text-left">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">HQ LOCATION</h4>
+<p class="font-body-md text-body-md text-text-secondary">Shahdara, Delhi<br/>India</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">INQUIRIES</h4>
+<p class="font-body-md text-body-md text-text-secondary">contact@henwicbiomedics.com<br/>+91 98765 43210</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary mb-2">LEGAL</h4>
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-label-caps text-label-caps text-text-secondary hover:text-primary transition-colors" href="#">Research</a>
+</div>
+</div>
+<p class="font-label-caps text-label-caps text-text-secondary w-full border-t border-white/5 pt-8">
+                © 2024 HENWIC BIOMEDICS. BIOLOGICAL PRECISION.
+            </p>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll reveals
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Simple Hero Parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroTitle = document.getElementById('hero-title');
+            if (heroTitle && scrolled < window.innerHeight) {
+                heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+</body></html>
