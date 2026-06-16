@@ -2,8 +2,13 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { cn } from "../lib/utils";
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface MagneticButtonProps {
+  children: React.ReactNode;
+  className?: string;
   strength?: number;
+  type?: "button" | "submit" | "reset";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
 /**
@@ -14,7 +19,9 @@ export function MagneticButton({
   children,
   className,
   strength = 0.35,
-  ...props
+  type = "button",
+  onClick,
+  disabled,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
@@ -48,7 +55,9 @@ export function MagneticButton({
         "hover:shadow-[0_0_30px_rgba(0,210,106,0.55)]",
         className
       )}
-      {...props}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </motion.button>

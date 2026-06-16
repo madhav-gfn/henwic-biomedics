@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-background text-text-primary font-body antialiased;
+    @apply bg-background text-text-primary font-body antialiased overflow-x-hidden;
     font-feature-settings: "ss01" on, "ss02" on;
   }
 
@@ -64,6 +64,71 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  .text-gradient-hero {
+    background: linear-gradient(to bottom, #f8fafc, rgba(248, 250, 252, 0.35));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Ambient radial glow washes */
+  .bio-glow {
+    @apply rounded-full;
+    width: theme("spacing.bio-glow-size");
+    height: theme("spacing.bio-glow-size");
+  }
+
+  .bio-glow-primary {
+    background: radial-gradient(circle, rgba(0, 210, 106, 0.15) 0%, transparent 70%);
+  }
+
+  .bio-glow-organic {
+    background: radial-gradient(circle, rgba(156, 225, 179, 0.12) 0%, transparent 70%);
+  }
+
+  .bio-glow-neutral {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  }
+
+  /* SVG energy path stroke animation */
+  .energy-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: flow 4s linear infinite;
+  }
+
+  .energy-path-delayed {
+    animation-delay: 1.2s;
+  }
+
+  .energy-path-slow {
+    animation-delay: 2.4s;
+    animation-duration: 6s;
+  }
+
+  /* Microbiome cell blobs — position via CSS variables from component */
+  .organic-cell {
+    left: var(--cell-x);
+    top: var(--cell-y);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background: radial-gradient(circle at 30% 30%, rgba(172, 242, 195, 0.35), rgba(129, 197, 153, 0.08));
+    filter: blur(12px);
+    will-change: transform, opacity;
+  }
+
+  /* 3D showcase card stage */
+  .showcase-card-perspective {
+    perspective: 1200px;
+    perspective-origin: center center;
+  }
+
+  .showcase-card-inner {
+    transform-style: preserve-3d;
+    will-change: transform;
   }
 }
 

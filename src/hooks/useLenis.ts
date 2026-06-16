@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import { gsap, ScrollTrigger, ensureGsapPlugins } from "../lib/gsap";
+import { useReducedMotion } from "./useReducedMotion";
 
 /**
  * Drives the whole page with Lenis for buttery smooth scrolling,
@@ -9,7 +11,11 @@ import { gsap, ScrollTrigger, ensureGsapPlugins } from "../lib/gsap";
  * Mount once near the root of the app.
  */
 export function useLenis() {
+  const reducedMotion = useReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
+
     ensureGsapPlugins();
 
     const lenis = new Lenis({
@@ -32,5 +38,5 @@ export function useLenis() {
       gsap.ticker.remove(tick);
       lenis.destroy();
     };
-  }, []);
+  }, [reducedMotion]);
 }
