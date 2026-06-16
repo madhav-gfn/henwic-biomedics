@@ -15,6 +15,7 @@ const SHOWCASE_ITEMS = [
     accentClass: "text-primary",
     depth: 1,
     rotateBias: -4,
+    image: "/henwin.png",
   },
   {
     title: "Faunajoy™ Capsules",
@@ -23,6 +24,7 @@ const SHOWCASE_ITEMS = [
     accentClass: "text-organic",
     depth: 2,
     rotateBias: 5,
+    image: "/faunajoy.png",
   },
 ] as const;
 
