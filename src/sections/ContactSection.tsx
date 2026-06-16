@@ -8,8 +8,9 @@ const FOOTER_COLUMNS = [
     title: "Marketed By",
     lines: [
       "Henwic Biomedics",
-      "1/4649/164D, Street No. 7",
-      "Shahdra, Delhi-110032",
+      "Office No. 501, Forth floor, 45-A",
+      "Hasanpur main road, I.P. Extension",
+      "Delhi-110092",
     ],
   },
   {

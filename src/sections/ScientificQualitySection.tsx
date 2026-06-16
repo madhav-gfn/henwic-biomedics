@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Shield, FlaskConical, BadgeCheck } from "lucide-react";
+import { Shield, Users, Lightbulb, Scale, HeartHandshake, CheckCircle } from "lucide-react";
 import { gsap, ensureGsapPlugins } from "../lib/gsap";
 import { BioGlow } from "../components/BioGlow";
 import { GlassPanel } from "../components/GlassPanel";
@@ -9,24 +9,42 @@ import { DURATION, STAGGER } from "../lib/motion";
 import { cn } from "../lib/utils";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
-const CERTIFICATIONS = [
+const VALUES = [
   {
-    id: "fssai",
+    id: "quality",
+    icon: CheckCircle,
+    title: "Quality First",
+    body: "We ensure quality-assured products through strict compliance with manufacturing standards.",
+  },
+  {
+    id: "integrity",
+    icon: Scale,
+    title: "Integrity & Transparency",
+    body: "We uphold ethical business practices in every interaction and transaction.",
+  },
+  {
+    id: "customer",
+    icon: HeartHandshake,
+    title: "Customer Satisfaction",
+    body: "We are committed to strong customer support and long-term trusted partnerships.",
+  },
+  {
+    id: "innovation",
+    icon: Lightbulb,
+    title: "Innovation",
+    body: "Continuously improving healthcare solutions to meet the evolving needs of patients.",
+  },
+  {
+    id: "ethical",
+    icon: Users,
+    title: "Ethical Marketing",
+    body: "Our practices strictly adhere to the highest standards of marketing ethics.",
+  },
+  {
+    id: "patient",
     icon: Shield,
-    title: "FSSAI Licensed",
-    body: "FSSAI License No. 10019064001789 — fully compliant with India's Food Safety and Standards Authority regulations.",
-  },
-  {
-    id: "iso",
-    icon: BadgeCheck,
-    title: "ISO 9001:2008",
-    body: "Manufactured under ISO 9001:2008 certified processes, ensuring consistent quality at every stage.",
-  },
-  {
-    id: "gmp",
-    icon: FlaskConical,
-    title: "GMP Manufacturing",
-    body: "Produced at Manfriday Lifesciences under strict Good Manufacturing Practices in Kundli, Haryana.",
+    title: "Patient Care",
+    body: "A relentless focus on patient well-being and healthcare excellence.",
   },
 ] as const;
 
@@ -75,22 +93,22 @@ export function ScientificQualitySection() {
 
       <div className="container-page relative z-10">
         <div className="text-center mb-10 md:mb-16 lg:mb-24 max-w-3xl mx-auto">
-          <SectionLabel className="justify-center mb-6">Clinical Validation</SectionLabel>
+          <SectionLabel className="justify-center mb-6">Why Choose Henwic?</SectionLabel>
           <TextReveal
             as="h2"
-            text="Engineered for Purity"
-            highlight={["Purity"]}
+            text="Our Core Values"
+            highlight={["Values"]}
             className="font-display text-headline-lg text-text-primary justify-center"
             stagger={STAGGER.word}
           />
         </div>
 
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {CERTIFICATIONS.map((cert, index) => {
-            const Icon = cert.icon;
+          {VALUES.map((val, index) => {
+            const Icon = val.icon;
             return (
               <GlassPanel
-                key={cert.id}
+                key={val.id}
                 data-cert
                 className={cn(
                   "p-6 sm:p-8 md:p-10 flex flex-col gap-4 sm:gap-6",
@@ -101,11 +119,11 @@ export function ScientificQualitySection() {
                   <Icon className="w-8 h-8 text-primary" strokeWidth={1.25} aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="font-display text-headline-md text-text-primary mb-3">{cert.title}</h3>
-                  <p className="font-body text-body-md text-text-muted">{cert.body}</p>
+                  <h3 className="font-display text-headline-md text-text-primary mb-3">{val.title}</h3>
+                  <p className="font-body text-body-md text-text-muted">{val.body}</p>
                 </div>
                 <span className="font-mono text-technical-data text-primary/60">
-                  {String(index + 1).padStart(2, "0")} / 03
+                  {String(index + 1).padStart(2, "0")} / 06
                 </span>
               </GlassPanel>
             );

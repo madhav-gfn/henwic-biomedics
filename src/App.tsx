@@ -3,12 +3,12 @@ import { Analytics } from "@vercel/analytics/react";
 import ReactGA from "react-ga4";
 import { Header } from "./components/layout/Header";
 import { useLenis } from "./hooks/useLenis";
-import { ContactSection } from "./sections/ContactSection";
-import { FaunajoySection } from "./sections/FaunajoySection";
-import { HenminoSection } from "./sections/HenminoSection";
 import { HeroSection } from "./sections/HeroSection";
-import { ProductShowcaseSection } from "./sections/ProductShowcaseSection";
+import { AboutSection } from "./sections/AboutSection";
+import { ContactSection } from "./sections/ContactSection";
+import { FeaturedProductsSection } from "./sections/FeaturedProductsSection";
 import { ScientificQualitySection } from "./sections/ScientificQualitySection";
+import { OfficeGallerySection } from "./sections/OfficeGallerySection";
 
 function App() {
   useLenis();
@@ -25,10 +25,10 @@ function App() {
       <Header />
       <main id="top">
         <HeroSection />
-        <HenminoSection />
-        <FaunajoySection />
-        <ProductShowcaseSection />
+        <AboutSection />
+        <FeaturedProductsSection />
         <ScientificQualitySection />
+        <OfficeGallerySection />
         <ContactSection />
       </main>
       <Analytics />

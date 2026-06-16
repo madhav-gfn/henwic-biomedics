@@ -53,14 +53,14 @@ export function HeroSection() {
         <h1 className="font-display text-display-hero text-text-primary mb-2">
           <TextReveal
             as="span"
-            text="Science-Backed"
-            highlight={["Science-Backed"]}
+            text="Innovating Healthcare,"
+            highlight={["Healthcare,"]}
             className="block"
             stagger={STAGGER.word}
           />
           <TextReveal
             as="span"
-            text="Nutrition & Wellness."
+            text="Inspiring Wellness."
             highlight={["Wellness."]}
             className="block"
             delay={STAGGER.line}
@@ -81,8 +81,7 @@ export function HeroSection() {
             delay: DELAY.heroSubhead,
           }}
         >
-          From Henmino™ amino-energy tablets to Faunajoy™ pre & probiotic capsules —
-          clinically formulated, ISO certified, and GMP manufactured for your daily health.
+          Henwic Pharmaceuticals Pvt. Ltd. is dedicated to building a healthier India through quality medicines, trusted partnerships, and a commitment to excellence in healthcare.
         </motion.p>
 
         <motion.div
