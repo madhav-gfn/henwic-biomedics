@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import ReactGA from "react-ga4";
 import { Header } from "./components/layout/Header";
 import { useLenis } from "./hooks/useLenis";
@@ -32,6 +33,7 @@ function App() {
         <ContactSection />
       </main>
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
