@@ -62,7 +62,7 @@ export function HenminoSection() {
     <section
       id="henmino"
       ref={sectionRef}
-      className="relative min-h-[100dvh] py-section-gap overflow-hidden"
+      className="relative pt-16 pb-20 overflow-hidden"
       aria-label="Henmino product universe"
     >
       <BioGlow tone="primary" className="top-0 right-0 translate-x-1/3 -translate-y-1/4" />

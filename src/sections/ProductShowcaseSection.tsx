@@ -43,7 +43,7 @@ export function ProductShowcaseSection() {
     <section
       ref={sectionRef}
       id="products"
-      className="relative py-section-gap overflow-hidden min-h-[90dvh] flex items-center"
+      className="relative pt-16 pb-20 overflow-hidden flex items-center"
       aria-label="Product showcase"
     >
       <div className="container-page relative z-10 w-full">

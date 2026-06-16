@@ -22,7 +22,7 @@ export function ContactSection() {
   return (
     <>
       <section
-        className="relative py-section-gap flex items-center justify-center text-center overflow-hidden min-h-[min(614px,90dvh)]"
+        className="relative pt-16 pb-20 flex items-center justify-center text-center overflow-hidden"
         aria-label="Closing statement"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
@@ -47,7 +47,7 @@ export function ContactSection() {
 
       <footer
         id="contact"
-        className="bg-surface w-full py-section-gap border-t border-line"
+        className="bg-surface w-full pt-12 pb-10 border-t border-line"
       >
         <div className="container-page flex flex-col items-center text-center">
           <p

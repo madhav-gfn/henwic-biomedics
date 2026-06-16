@@ -76,7 +76,7 @@
 
   /* Ambient radial glow washes */
   .bio-glow {
-    @apply rounded-full;
+    @apply rounded-full absolute;
     width: theme("spacing.bio-glow-size");
     height: theme("spacing.bio-glow-size");
   }

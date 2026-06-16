@@ -1,6 +1,5 @@
 import { Header } from "./components/layout/Header";
 import { useLenis } from "./hooks/useLenis";
-import { BrandStorySection } from "./sections/BrandStorySection";
 import { ContactSection } from "./sections/ContactSection";
 import { FaunajoySection } from "./sections/FaunajoySection";
 import { HenminoSection } from "./sections/HenminoSection";
@@ -16,7 +15,6 @@ function App() {
       <Header />
       <main id="top">
         <HeroSection />
-        <BrandStorySection />
         <HenminoSection />
         <FaunajoySection />
         <ProductShowcaseSection />

@@ -61,7 +61,7 @@ export function FaunajoySection() {
     <section
       id="faunajoy"
       ref={sectionRef}
-      className="relative min-h-[100dvh] py-section-gap overflow-hidden bg-surface/40"
+      className="relative pt-16 pb-20 overflow-hidden bg-surface/40"
       aria-label="Faunajoy product universe"
     >
       <BioGlow tone="organic" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4" />

@@ -68,7 +68,7 @@ export function ScientificQualitySection() {
     <section
       id="science"
       ref={sectionRef}
-      className="relative py-section-gap overflow-hidden scientific-grid"
+      className="relative pt-16 pb-20 overflow-hidden scientific-grid"
       aria-label="Scientific quality"
     >
       <BioGlow tone="primary" className="bottom-0 right-0 translate-x-1/3 translate-y-1/3" />

@@ -1,10 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ShaderBackground } from "../components/ShaderBackground";
-import { ParticleField } from "../components/ParticleField";
 import { TextReveal } from "../components/TextReveal";
 import { ScrollIndicator } from "../components/ScrollIndicator";
-import { DELAY, EASE_SMOOTH, PARALLAX, PARTICLE, SHADER, STAGGER } from "../lib/motion";
+import { DELAY, EASE_SMOOTH, PARALLAX, STAGGER } from "../lib/motion";
 import { cn } from "../lib/utils";
 import { useMouseParallax } from "../hooks/useMouseParallax";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -31,17 +29,9 @@ export function HeroSection() {
       aria-label="Hero"
     >
       <motion.div
-        className="absolute inset-0 will-change-transform"
+        className="absolute inset-0 bg-background"
         style={{ scale: reducedMotion ? 1 : bgScale }}
       >
-        <ShaderBackground className="opacity-60" intensity={SHADER.heroIntensity} />
-      </motion.div>
-
-      <motion.div
-        className="absolute inset-0 will-change-transform"
-        style={{ x: mouseX, y: mouseY }}
-      >
-        <ParticleField count={reducedMotion ? PARTICLE.heroCountMobile : PARTICLE.heroCount} />
       </motion.div>
 
       <motion.div

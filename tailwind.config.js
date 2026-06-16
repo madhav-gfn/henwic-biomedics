@@ -67,7 +67,7 @@ export default {
       spacing: {
         "grid-gutter": "1.5rem",
         "grid-margin": "4rem",
-        "section-gap": "clamp(5rem, 10vw, 10rem)",
+        "section-gap": "clamp(3rem, 6vw, 6rem)",
         "bio-glow-size": "600px",
       },
       maxWidth: {
