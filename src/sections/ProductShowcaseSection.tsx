@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FloatingShowcaseCard } from "../components/FloatingShowcaseCard";
 import { SectionLabel } from "../components/SectionLabel";
 import { TextReveal } from "../components/TextReveal";
-import { PARALLAX, SCROLL, STAGGER } from "../lib/motion";
+import { PARALLAX, STAGGER } from "../lib/motion";
 import { useMouseParallax } from "../hooks/useMouseParallax";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 

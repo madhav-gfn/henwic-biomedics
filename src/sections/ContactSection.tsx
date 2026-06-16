@@ -75,25 +75,11 @@ export function ContactSection() {
                 <h4 className="font-mono text-label-caps uppercase text-primary mb-6 tracking-[0.22em]">
                   {column.title}
                 </h4>
-                {"lines" in column ? (
-                  column.lines.map((line) => (
-                    <p key={line} className="font-body text-body-md text-text-muted">
-                      {line}
-                    </p>
-                  ))
-                ) : (
-                  <div className="flex flex-col gap-3">
-                    {column.links.map((link) => (
-                      <a
-                        key={link}
-                        href="#"
-                        className="font-mono text-label-caps uppercase text-text-muted hover:text-primary transition-colors duration-300"
-                      >
-                        {link}
-                      </a>
-                    ))}
-                  </div>
-                )}
+                {column.lines.map((line) => (
+                  <p key={line} className="font-body text-body-md text-text-muted">
+                    {line}
+                  </p>
+                ))}
               </div>
             ))}
           </div>
