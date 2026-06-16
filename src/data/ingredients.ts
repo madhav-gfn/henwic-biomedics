@@ -3,37 +3,43 @@ export interface Ingredient {
   name: string;
   role: string;
   symbol: string;
+  dosage: string;
 }
 
 export const HENMINO_INGREDIENTS: Ingredient[] = [
   {
-    id: "l-carnitine",
-    name: "L-Carnitine",
-    role: "Cellular energy transport across mitochondrial membranes.",
+    id: "l-carnitine-l-tartrate",
+    name: "L-Carnitine L-Tartrate",
+    role: "Facilitates fatty acid transport into mitochondria for cellular energy production.",
     symbol: "LC",
+    dosage: "500mg",
   },
   {
     id: "l-arginine",
     name: "L-Arginine",
-    role: "Nitric oxide precursor supporting vascular performance.",
+    role: "A nitric oxide precursor that supports healthy blood flow and vascular performance.",
     symbol: "LA",
+    dosage: "100mg",
   },
   {
     id: "magnesium",
     name: "Magnesium",
-    role: "Electrolyte balance and neuromuscular recovery.",
+    role: "Essential mineral for electrolyte balance, muscle function, and neuromuscular recovery.",
     symbol: "Mg",
+    dosage: "50mg",
   },
   {
     id: "vitamin-e",
-    name: "Vitamin E",
-    role: "Antioxidant shield for oxidative cellular stress.",
+    name: "Vitamin E (50%)",
+    role: "Powerful antioxidant that protects cells from oxidative stress and free radical damage.",
     symbol: "VE",
+    dosage: "9mg",
   },
   {
-    id: "vitamin-b12",
-    name: "Vitamin B12",
-    role: "Red blood cell synthesis and metabolic clarity.",
+    id: "cyanocobalamin",
+    name: "Cyanocobalamin (B12)",
+    role: "Vital for red blood cell formation, neurological function, and DNA synthesis.",
     symbol: "B12",
+    dosage: "2.4mcg",
   },
 ];

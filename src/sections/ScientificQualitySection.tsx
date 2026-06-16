@@ -11,22 +11,22 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const CERTIFICATIONS = [
   {
+    id: "fssai",
+    icon: Shield,
+    title: "FSSAI Licensed",
+    body: "FSSAI License No. 10019064001789 — fully compliant with India's Food Safety and Standards Authority regulations.",
+  },
+  {
     id: "iso",
     icon: BadgeCheck,
-    title: "ISO Certified",
-    body: "Manufacturing processes conforming to rigorous international standards.",
+    title: "ISO 9001:2008",
+    body: "Manufactured under ISO 9001:2008 certified processes, ensuring consistent quality at every stage.",
   },
   {
     id: "gmp",
     icon: FlaskConical,
     title: "GMP Manufacturing",
-    body: "Good Manufacturing Practices ensuring consistent quality and safety.",
-  },
-  {
-    id: "fssai",
-    icon: Shield,
-    title: "FSSAI Compliance",
-    body: "Fully compliant with the Food Safety and Standards Authority of India.",
+    body: "Produced at Manfriday Lifesciences under strict Good Manufacturing Practices in Kundli, Haryana.",
   },
 ] as const;
 
@@ -74,7 +74,7 @@ export function ScientificQualitySection() {
       <BioGlow tone="primary" className="bottom-0 right-0 translate-x-1/3 translate-y-1/3" />
 
       <div className="container-page relative z-10">
-        <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-16 lg:mb-24 max-w-3xl mx-auto">
           <SectionLabel className="justify-center mb-6">Clinical Validation</SectionLabel>
           <TextReveal
             as="h2"
@@ -85,7 +85,7 @@ export function ScientificQualitySection() {
           />
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {CERTIFICATIONS.map((cert, index) => {
             const Icon = cert.icon;
             return (
@@ -93,7 +93,7 @@ export function ScientificQualitySection() {
                 key={cert.id}
                 data-cert
                 className={cn(
-                  "p-8 md:p-10 flex flex-col gap-6",
+                  "p-6 sm:p-8 md:p-10 flex flex-col gap-4 sm:gap-6",
                   "transition-transform duration-500 hover:-translate-y-2"
                 )}
               >

@@ -82,11 +82,11 @@ export function HenminoSection() {
       <ParticleField count={22} colorClass="bg-primary-bright" className="opacity-70" />
 
       <motion.div
-        className="container-page relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-center"
+        className="container-page relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-grid-gutter items-center"
         style={{ y: reducedMotion ? 0 : contentY }}
       >
-        <div className="lg:col-span-5 flex flex-col gap-8">
-          <SectionLabel>Phase 02 — Product Universe</SectionLabel>
+        <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-8">
+          <SectionLabel>Henmino™ Tablets</SectionLabel>
           <TextReveal
             as="h2"
             text="Henmino. Dynamic Energy."
@@ -95,9 +95,10 @@ export function HenminoSection() {
             stagger={STAGGER.word}
           />
           <p className="font-body text-body-lg text-text-muted max-w-md">
-            A precision amino matrix engineered for peak cellular output — vibrant,
-            powerful, and clinically composed.
+            L-Carnitine L-Tartrate, L-Arginine, Cyanocobalamin, Vitamin E & Magnesium
+            Tablets — a precision amino matrix engineered for peak cellular output.
           </p>
+          <span className="font-mono text-technical-data text-primary/60">10 × 10 Tablets per pack</span>
           <div className="henmino-glow-bar h-1 w-32 rounded-full bg-primary/80 shadow-[0_0_24px_rgba(0,210,106,0.45)]" />
         </div>
 
@@ -107,7 +108,7 @@ export function HenminoSection() {
               key={ingredient.id}
               data-ingredient
               className={cn(
-                "p-6 flex flex-col gap-4 transition-transform duration-500",
+                "p-4 sm:p-6 flex flex-col gap-3 sm:gap-4 transition-transform duration-500",
                 "hover:-translate-y-1",
                 index === 0 && "sm:col-span-2 sm:flex-row sm:items-center sm:gap-8"
               )}
@@ -118,6 +119,7 @@ export function HenminoSection() {
               <div>
                 <h3 className="font-display text-headline-md text-text-primary mb-1">{ingredient.name}</h3>
                 <p className="font-body text-body-md text-text-muted">{ingredient.role}</p>
+                <span className="font-mono text-technical-data text-primary/50 mt-1 inline-block">{ingredient.dosage} per tablet</span>
               </div>
             </GlassPanel>
           ))}

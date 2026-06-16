@@ -56,7 +56,7 @@ export function FloatingShowcaseCard({
           translateZ,
         }}
       >
-        <GlassPanel className="p-8 md:p-10 flex flex-col gap-6 min-h-[320px] justify-between">
+        <GlassPanel className="p-6 sm:p-8 md:p-10 flex flex-col gap-4 sm:gap-6 min-h-[240px] sm:min-h-[320px] justify-between">
           <span className={cn("font-mono text-label-caps uppercase tracking-[0.28em]", accentClass)}>
             {label}
           </span>

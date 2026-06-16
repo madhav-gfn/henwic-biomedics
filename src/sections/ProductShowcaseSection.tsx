@@ -9,17 +9,17 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const SHOWCASE_ITEMS = [
   {
-    title: "Henmino Matrix",
-    subtitle: "Amino-driven cellular energy — formulated for performance without compromise.",
-    label: "Active Formulation",
+    title: "Henmino™ Tablets",
+    subtitle: "L-Carnitine L-Tartrate, L-Arginine, Cyanocobalamin, Vitamin E & Magnesium — 10×10 tablets for daily cellular energy.",
+    label: "Amino Energy Tablets",
     accentClass: "text-primary",
     depth: 1,
     rotateBias: -4,
   },
   {
-    title: "Faunajoy Colony",
-    subtitle: "Multi-strain probiotic harmony — biological calm engineered for daily balance.",
-    label: "Probiotic System",
+    title: "Faunajoy™ Capsules",
+    subtitle: "4-strain pre & probiotic formula with 166 million organisms per capsule — for complete gut harmony.",
+    label: "Pre & Probiotic Capsules",
     accentClass: "text-organic",
     depth: 2,
     rotateBias: 5,
@@ -48,7 +48,7 @@ export function ProductShowcaseSection() {
     >
       <div className="container-page relative z-10 w-full">
         <motion.div
-          className="text-center mb-16 md:mb-24 max-w-3xl mx-auto"
+          className="text-center mb-10 md:mb-16 lg:mb-24 max-w-3xl mx-auto"
           style={{ y: reducedMotion ? 0 : headingY }}
         >
           <SectionLabel className="justify-center mb-6">Product Showcase</SectionLabel>
@@ -62,8 +62,7 @@ export function ProductShowcaseSection() {
         </motion.div>
 
         <div
-          className="showcase-stage grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center justify-items-center"
-          style={{ minHeight: `${SCROLL.showcasePinMultiplier * 50}vh` }}
+          className="showcase-stage grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center justify-items-center"
         >
           {SHOWCASE_ITEMS.map((item, index) => (
             <FloatingShowcaseCard

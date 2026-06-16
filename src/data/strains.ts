@@ -7,27 +7,27 @@ export interface ProbioticStrain {
 
 export const FAUNAJOY_STRAINS: ProbioticStrain[] = [
   {
+    id: "lactic-acid-bacillus",
+    name: "Lactic Acid Bacillus",
+    benefit: "Produces lactic acid to maintain optimal gut pH and inhibit harmful pathogens.",
+    colony: "100 Million",
+  },
+  {
     id: "streptococcus-faecalis",
     name: "Streptococcus Faecalis",
-    benefit: "Supports intestinal barrier integrity and nutrient uptake.",
-    colony: "2.5B CFU",
+    benefit: "Supports intestinal barrier integrity and enhances nutrient absorption.",
+    colony: "60 Million",
   },
   {
     id: "clostridium-butyricum",
     name: "Clostridium Butyricum",
-    benefit: "Produces butyrate for colonocyte nourishment.",
-    colony: "1.8B CFU",
+    benefit: "Produces butyrate to nourish colon cells and support digestive health.",
+    colony: "4 Million",
   },
   {
     id: "bacillus-mesentericus",
     name: "Bacillus Mesentericus",
-    benefit: "Enzymatic digestion and microbial equilibrium.",
-    colony: "2.0B CFU",
-  },
-  {
-    id: "lactic-acid-bacillus",
-    name: "Lactic Acid Bacillus",
-    benefit: "Acidifies the gut environment against pathogens.",
-    colony: "3.2B CFU",
+    benefit: "Aids enzymatic digestion and promotes healthy microbial balance in the gut.",
+    colony: "2 Million",
   },
 ];

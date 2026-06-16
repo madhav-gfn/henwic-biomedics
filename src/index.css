@@ -134,7 +134,7 @@
 
 @layer utilities {
   .container-page {
-    @apply max-w-container mx-auto px-6 md:px-grid-margin;
+    @apply max-w-container mx-auto px-4 sm:px-6 md:px-grid-margin;
   }
 }
 

@@ -5,16 +5,28 @@ import { EASE_SMOOTH, STAGGER } from "../lib/motion";
 
 const FOOTER_COLUMNS = [
   {
-    title: "HQ Location",
-    lines: ["Shahdara, Delhi", "India"],
+    title: "Marketed By",
+    lines: [
+      "Henwic Biomedics",
+      "1/4649/164D, Street No. 7",
+      "Shahdra, Delhi-110032",
+    ],
   },
   {
-    title: "Inquiries",
-    lines: ["contact@henwicbiomedics.com", "+91 98765 43210"],
+    title: "Manufactured By",
+    lines: [
+      "Manfriday Lifesciences",
+      "Plot No. 370, EPIP, Sec-53, HSIIDC",
+      "Kundli, Sonipat-131028 (Haryana)",
+    ],
   },
   {
-    title: "Legal",
-    links: ["Privacy", "Terms", "Research"],
+    title: "Certifications",
+    lines: [
+      "FSSAI Lic: 10019064001789",
+      "ISO 9001:2008 Certified",
+      "GMP Manufacturing",
+    ],
   },
 ] as const;
 
@@ -57,7 +69,7 @@ export function ContactSection() {
             Henwic
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-4xl gap-12 mb-16 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-4xl gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16 text-left">
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.title}>
                 <h4 className="font-mono text-label-caps uppercase text-primary mb-6 tracking-[0.22em]">
@@ -86,7 +98,7 @@ export function ContactSection() {
             ))}
           </div>
 
-          <p className="font-mono text-label-caps uppercase text-text-muted w-full border-t border-line pt-8 tracking-[0.18em]">
+          <p className="font-mono text-label-caps uppercase text-text-muted w-full border-t border-line pt-6 sm:pt-8 tracking-[0.18em]">
             © {new Date().getFullYear()} HENWIC BIOMEDICS. Biological Precision.
           </p>
         </div>

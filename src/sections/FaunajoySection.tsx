@@ -82,23 +82,24 @@ export function FaunajoySection() {
       />
 
       <motion.div
-        className="container-page relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-start"
+        className="container-page relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-grid-gutter items-start"
         style={{ opacity: reducedMotion ? 1 : contentOpacity }}
       >
-        <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col gap-8">
-          <SectionLabel dotClassName="bg-organic">Phase 03 — Microbiome</SectionLabel>
+        <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col gap-5 sm:gap-8">
+          <SectionLabel dotClassName="bg-organic">Faunajoy™ Capsules</SectionLabel>
           <TextReveal
             as="h2"
-            text="Faunajoy. Organic Balance."
-            highlight={["Faunajoy.", "Balance."]}
+            text="Faunajoy. Gut Harmony."
+            highlight={["Faunajoy.", "Harmony."]}
             className="font-display text-headline-lg text-organic-glow"
             highlightClassName="text-organic"
             stagger={STAGGER.word}
           />
           <p className="font-body text-body-lg text-text-muted max-w-md">
-            Calm, biological intelligence — probiotic colonies in harmonious motion,
-            restoring the ecosystem within.
+            Pre & Probiotic hard gelatin capsules with 4 clinically validated bacterial
+            strains — restoring the gut ecosystem from within.
           </p>
+          <span className="font-mono text-technical-data text-organic-deep/60">10 × 10 Capsules · 1.4 kcal per capsule</span>
         </div>
 
         <div ref={strainsRef} className="lg:col-span-7 flex flex-col gap-5">
@@ -107,7 +108,7 @@ export function FaunajoySection() {
               key={strain.id}
               data-strain
               className={cn(
-                "p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4",
+                "p-5 sm:p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4",
                 "border-organic/20 hover:border-organic/40 transition-colors duration-500",
                 index % 2 === 1 && "md:translate-x-6"
               )}
