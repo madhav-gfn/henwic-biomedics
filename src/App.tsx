@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import ReactGA from "react-ga4";
 import { Header } from "./components/layout/Header";
 import { useLenis } from "./hooks/useLenis";
 import { ContactSection } from "./sections/ContactSection";
@@ -10,6 +13,13 @@ import { ScientificQualitySection } from "./sections/ScientificQualitySection";
 function App() {
   useLenis();
 
+  useEffect(() => {
+    // Initialize Google Analytics with your Measurement ID
+    // Replace "G-XXXXXXXXXX" with your actual Google Analytics Measurement ID
+    ReactGA.initialize("G-XXXXXXXXXX");
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   return (
     <>
       <Header />
@@ -21,6 +31,7 @@ function App() {
         <ScientificQualitySection />
         <ContactSection />
       </main>
+      <Analytics />
     </>
   );
 }
