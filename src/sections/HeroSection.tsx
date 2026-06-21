@@ -51,6 +51,7 @@ export function HeroSection() {
         </motion.span>
 
         <h1 className="font-display text-display-hero text-text-primary mb-2">
+          <span className="sr-only">Henwic Biomedics & Pharmaceuticals - </span>
           <TextReveal
             as="span"
             text="Innovating Healthcare,"

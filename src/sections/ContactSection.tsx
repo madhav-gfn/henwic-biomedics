@@ -24,6 +24,14 @@ const FOOTER_COLUMNS = [
     ],
   },
   {
+    title: "Contact",
+    lines: [
+      "Devendra Kumar Mishra",
+      "+91-9548205171",
+      "dev.bah44@gmail.com",
+    ],
+  },
+  {
     title: "Certifications",
     lines: [
       "FSSAI Lic: 10019064001789",
@@ -115,7 +123,7 @@ export function ContactSection() {
             Henwic
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-4xl gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-5xl gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16 text-left">
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.title}>
                 <h4 className="font-mono text-label-caps uppercase text-primary mb-6 tracking-[0.22em]">
@@ -131,7 +139,7 @@ export function ContactSection() {
           </div>
 
           <p className="font-mono text-label-caps uppercase text-text-muted w-full border-t border-line pt-6 sm:pt-8 tracking-[0.18em]">
-            © {new Date().getFullYear()} HENWIC BIOMEDICS. Biological Precision.
+            © {new Date().getFullYear()} HENWIC BIOMEDICS & PHARMACEUTICALS. Biological Precision.
           </p>
         </div>
       </footer>
