@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
-import { MagneticButton } from "../components/MagneticButton";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { TextReveal } from "../components/TextReveal";
+import { ContactForm } from "../components/ContactForm";
+import { MagneticButton } from "../components/MagneticButton";
 import { EASE_SMOOTH, STAGGER } from "../lib/motion";
 
 const FOOTER_COLUMNS = [
@@ -32,30 +34,73 @@ const FOOTER_COLUMNS = [
 ] as const;
 
 export function ContactSection() {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
   return (
     <>
       <section
-        className="relative pt-16 pb-20 flex items-center justify-center text-center overflow-hidden"
-        aria-label="Closing statement"
+        className="relative pt-16 pb-20 flex items-center justify-center text-center overflow-hidden min-h-[40vh]"
+        aria-label="Closing statement and contact form"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
 
-        <motion.div
-          className="relative z-10 container-page flex flex-col items-center gap-10"
-          initial={{ opacity: 0, y: 48 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 1, ease: EASE_SMOOTH }}
-        >
-          <TextReveal
-            as="h2"
-            text="Better Health Begins Within."
-            highlight={["Within."]}
-            className="font-display text-display-hero text-gradient-hero justify-center"
-            stagger={STAGGER.word}
-          />
-          <MagneticButton type="button">Explore Ecosystem</MagneticButton>
-        </motion.div>
+        <div className="relative z-10 container-page flex flex-col items-center gap-10 w-full">
+          <motion.div
+            className="flex flex-col items-center gap-10"
+            initial={{ opacity: 0, y: 48 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 1, ease: EASE_SMOOTH }}
+          >
+            <TextReveal
+              as="h2"
+              text="Better Health Begins Within."
+              highlight={["Within."]}
+              className="font-display text-display-hero text-gradient-hero justify-center"
+              stagger={STAGGER.word}
+            />
+            
+            <AnimatePresence mode="wait">
+              {!isFormVisible && (
+                <motion.div
+                  key="button"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                  transition={{ duration: 0.4, ease: EASE_SMOOTH }}
+                >
+                  <div onClick={() => setIsFormVisible(true)}>
+                    <MagneticButton type="button">Get in Touch</MagneticButton>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+          
+          <AnimatePresence>
+            {isFormVisible && (
+              <motion.div
+                key="form"
+                initial={{ opacity: 0, height: 0, y: 20 }}
+                animate={{ opacity: 1, height: "auto", y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -20 }}
+                transition={{ duration: 0.6, ease: EASE_SMOOTH }}
+                className="w-full overflow-hidden"
+              >
+                <div className="relative pt-4">
+                  <button 
+                    onClick={() => setIsFormVisible(false)}
+                    className="absolute top-8 right-0 md:right-[15%] z-20 w-8 h-8 flex items-center justify-center rounded-full bg-surface border border-line text-text-muted hover:text-text-main transition-colors"
+                    aria-label="Close contact form"
+                  >
+                    ×
+                  </button>
+                  <ContactForm />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </section>
 
       <footer
