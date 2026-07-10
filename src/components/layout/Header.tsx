@@ -3,11 +3,10 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { cn } from "../../lib/utils";
 
 const NAV_LINKS = [
-  { label: "Henmino", href: "#henmino" },
-  { label: "Faunajoy", href: "#faunajoy" },
+  { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Science", href: "#science" },
-  { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "#gallery" },
 ] as const;
 
 /**

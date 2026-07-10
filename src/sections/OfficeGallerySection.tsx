@@ -57,7 +57,7 @@ export function OfficeGallerySection() {
 
   return (
     <>
-      <section className="relative py-24 bg-surface overflow-hidden">
+      <section id="gallery" className="relative py-24 bg-surface overflow-hidden">
         <div className="container-page flex flex-col items-center gap-10">
           <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 px-4 md:px-[10vw]">
             <div className="text-left w-full max-w-3xl">
