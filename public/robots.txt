@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.henwic.com/sitemap.xml
+Sitemap: https://www.henwic.in/sitemap.xml
